@@ -80,7 +80,7 @@ class AnimalSeeder extends Seeder
             $newAnimal = new Animal();
             $newAnimal->title = $animalData['title'];
             $newAnimal->category = $animalData['category'];
-            $newAnimal->title = $animalData['title'];
+            $newAnimal->image_url = $animalData['image_url'];
             $newAnimal ->save();
         }
     }
