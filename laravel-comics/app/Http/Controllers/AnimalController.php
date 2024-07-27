@@ -13,8 +13,18 @@ class AnimalController extends Controller
     public function index()
     {
         //
+        $animals = Animal::all();
+
+        // return view('index' compact(index))
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(Animal $animal)
+    {
+        //
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -31,13 +41,7 @@ class AnimalController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Animal $animal)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
