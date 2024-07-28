@@ -14,56 +14,57 @@ class AnimalSeeder extends Seeder
     public function run(): void
     {
         //
+
         $animals = [
             [
                 "title" => "Lion",
                 "category" => "Wildlife",
-                "image_url" => "https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg"
-            ],
-            [
-                "title" => "Elephant",
-                "category" => "Wildlife",
-                "image_url" => "https://images.pexels.com/photos/66998/elephant-cub-tsavo-kenya-66998.jpeg"
+                "image_url" => "https://images.pexels.com/photos/36843/lion-panthera-leo-lioness-animal-world.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "title" => "Penguin",
                 "category" => "Birds",
-                "image_url" => "https://images.pexels.com/photos/257036/pexels-photo-257036.jpeg"
+                "image_url" => "https://images.pexels.com/photos/86405/penguin-funny-blue-water-86405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            ],
+            [
+                "title" => "Elephant",
+                "category" => "Wildlife",
+                "image_url" => "https://images.pexels.com/photos/1054666/pexels-photo-1054666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "title" => "Tiger",
                 "category" => "Wildlife",
-                "image_url" => "https://images.pexels.com/photos/46251/tiger-head-face-wildcat-46251.jpeg"
+                "image_url" => "https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg"
             ],
             [
                 "title" => "Koala",
                 "category" => "Wildlife",
-                "image_url" => "https://images.pexels.com/photos/2220330/pexels-photo-2220330.jpeg"
+                "image_url" => "https://images.pexels.com/photos/2610309/pexels-photo-2610309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "title" => "Peacock",
                 "category" => "Birds",
-                "image_url" => "https://images.pexels.com/photos/45910/peacock-bird-spring-animal-45910.jpeg"
+                "image_url" => "https://images.pexels.com/photos/45911/peacock-plumage-bird-peafowl-45911.jpeg"
             ],
             [
                 "title" => "Rabbit",
                 "category" => "Pets",
-                "image_url" => "https://images.pexels.com/photos/235449/pexels-photo-235449.jpeg"
+                "image_url" => "https://images.pexels.com/photos/326012/pexels-photo-326012.jpeg"
             ],
             [
                 "title" => "Panda",
                 "category" => "Wildlife",
-                "image_url" => "https://images.pexels.com/photos/270053/pexels-photo-270053.jpeg"
+                "image_url" => "https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "title" => "Horse",
                 "category" => "Farm Animals",
-                "image_url" => "https://images.pexels.com/photos/52500/horse-herd-fog-nature-52500.jpeg"
+                "image_url" => "https://images.pexels.com/photos/1996333/pexels-photo-1996333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
             [
                 "title" => "Dog",
                 "category" => "Pets",
-                "image_url" => "https://images.pexels.com/photos/336172/pexels-photo-336172.jpeg"
+                "image_url" => "https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg"
             ],
             [
                 "title" => "Cat",
@@ -73,9 +74,10 @@ class AnimalSeeder extends Seeder
             [
                 "title" => "Parrot",
                 "category" => "Birds",
-                "image_url" => "https://images.pexels.com/photos/33152/amazon-parrot-parrot-bird-scream.jpg"
+                "image_url" => "https://images.pexels.com/photos/1463295/pexels-photo-1463295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             ],
         ];
+
         foreach ($animals as $animalData) {
             $newAnimal = new Animal();
             $newAnimal->title = $animalData['title'];
