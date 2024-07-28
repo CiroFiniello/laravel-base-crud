@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-    <h1>Sei nella Show!</h1>
+    <h1>Sono una Show!</h1>
     <div class="container">
         <h1 class="my-5 ">{{ $animals->title }}</h1>
         <img src="{{ $animals->image_url }}" class="animal-img" alt="{{ $animals->title }}">

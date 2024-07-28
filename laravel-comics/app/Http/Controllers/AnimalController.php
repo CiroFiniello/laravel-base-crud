@@ -22,10 +22,10 @@ class AnimalController extends Controller
      * Display the specified resource.
      */
 
-    public function show(string $id)
+    public function show(Animal $animal)
     {
-        $animals = Animal::findOrFail($id);
-        return view('animals.show', compact('animals'));
+        // $animals = Animal::findOrFail($id);
+        return view('animal.show', compact('animal'));
     }
     /**
      * Show the form for creating a new resource.
