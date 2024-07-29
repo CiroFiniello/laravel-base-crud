@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Animal;
@@ -12,21 +11,18 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        //
         $animals = Animal::all();
-
         return view('animals.index', compact('animals'));
     }
 
     /**
      * Display the specified resource.
      */
-
-    public function show(Animal $animals)
+    public function show(Animal $animal) // Corretto parametro singolare
     {
-        // $animals = Animal::findOrFail($id);
-        return view('animals.show', compact('animals'));
+        return view('animals.show', compact('animal'));
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -42,25 +38,21 @@ class AnimalController extends Controller
     {
         $data = $request->all();
 
-        $newAnimal = new Animal($data);
+        $newAnimal = new Animal();
         $newAnimal->title = $data['name'];
         $newAnimal->category = $data['animalCategory'];
         $newAnimal->image_url = $data['animalImage'];
-        $newAnimal ->save();
-
-
+        $newAnimal->save();
 
         return redirect()->route('animals.index');
     }
-
-
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('animals.edit', compact('animal'));
     }
 
     /**
@@ -68,7 +60,14 @@ class AnimalController extends Controller
      */
     public function update(Request $request, Animal $animal)
     {
-        //
+        $data = $request->all();
+
+        $animal->title = $data['name'];
+        $animal->category = $data['animalCategory'];
+        $animal->image_url = $data['animalImage'];
+        $animal->update();
+
+        return redirect()->route('animals.index')->with('success', 'Animal updated successfully.');
     }
 
     /**
@@ -76,6 +75,6 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        //
+        // Implement the destroy method if needed
     }
 }
