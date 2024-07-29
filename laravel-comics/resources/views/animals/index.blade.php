@@ -24,9 +24,15 @@
                     <h6 class="card-subtitle text-muted">{{ $animal['category'] }}</h6>
 
                 </div>
-                <div class="buttons d-flex justify-content-between p-1">
+                <div class="buttons d-flex justify-content-between p-1 align-items-center">
                     <a href="{{route('animals.edit', $animal)}}" class="btn btn-success col-5 me-1">Edit</a>
-                    <a href="{{route('animals.edit', $animal)}}" class="btn btn-danger col-5 me-1">Delete</a>
+                    <form action="{{route('animals.destroy', $animal)}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                    <button type="submit" class="d-inline btn btn-danger">
+                        Delete
+                    </button>
+                    </form>
                 </div>
             </div>
         </div>
