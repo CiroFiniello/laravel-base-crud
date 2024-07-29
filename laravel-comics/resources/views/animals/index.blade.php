@@ -22,6 +22,11 @@
                 <div class="card-body">
                     <h3 class="card-title">{{ $animal['title'] }}</h3>
                     <h6 class="card-subtitle text-muted">{{ $animal['category'] }}</h6>
+
+                </div>
+                <div class="buttons d-flex justify-content-between p-1">
+                    <a href="{{route('animals.edit', $animal)}}" class="btn btn-success col-5 me-1">Edit</a>
+                    <a href="{{route('animals.edit', $animal)}}" class="btn btn-danger col-5 me-1">Delete</a>
                 </div>
             </div>
         </div>
