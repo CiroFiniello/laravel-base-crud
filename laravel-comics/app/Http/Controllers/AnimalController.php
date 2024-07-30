@@ -36,15 +36,20 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'animalCategory' => 'required|string|max:255',
+            'animalImage' => 'required|url|max:255',
+        ]);
 
         $newAnimal = new Animal();
-        $newAnimal->title = $data['name'];
-        $newAnimal->category = $data['animalCategory'];
-        $newAnimal->image_url = $data['animalImage'];
+        $newAnimal->title = $validatedData['name'];
+        $newAnimal->category = $validatedData['animalCategory'];
+        $newAnimal->image_url = $validatedData['animalImage'];
         $newAnimal->save();
 
-        return redirect()->route('animals.index');
+        return redirect()->route('animals.index')->with('success', 'Animal created successfully.');
+
     }
 
     /**
@@ -60,12 +65,17 @@ class AnimalController extends Controller
      */
     public function update(Request $request, Animal $animal)
     {
-        $data = $request->all();
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'animalCategory' => 'required|string|max:255',
+            'animalImage' => 'required|url|max:255',
+        ]);
 
-        $animal->title = $data['name'];
-        $animal->category = $data['animalCategory'];
-        $animal->image_url = $data['animalImage'];
+        $animal->title = $validatedData['name'];
+        $animal->category = $validatedData['animalCategory'];
+        $animal->image_url = $validatedData['animalImage'];
         $animal->update();
+
 
         return redirect()->route('animals.index')->with('success', 'Animal updated successfully.');
     }
